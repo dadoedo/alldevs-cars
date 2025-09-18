@@ -1,0 +1,9 @@
+{
+  "site_name": "Car & Art",
+  "site_description": "Váš spoľahlivý partner pre kúpu vozidla. Ponúkame kvalitné vozidlá za výhodné ceny s kompletným servisom a poradenstvom.",
+  "address": "Partizánska cesta 85, 974 01, Banská Bystrica",
+  "phone": "0910 662 069",
+  "email": "predaj.carart@gmail.com",
+  "opening_hours": "{\"monday\":\"8:00-17:00\",\"tuesday\":\"8:00-17:00\",\"wednesday\":\"8:00-17:00\",\"thursday\":\"8:00-17:00\",\"friday\":\"8:00-17:00\",\"saturday\":\"Zatvorené\",\"sunday\":\"Zatvorené\"}",
+  "google_maps_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.8809678782262!2d19.184170500174893!3d48.74341687373969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471515ee307d91ff%3A0xb3f51380ce5cc7ee!2sPartiz%C3%A1nska%20cesta%2085%2C%20974%2001%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1758199208016!5m2!1ssk!2ssk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+}
