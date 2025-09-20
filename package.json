@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "init-db": "tsx scripts/init-db.ts",
-    "sync-cars": "curl -X GET \"http://localhost:3000/api/sync-cars?key=your-sync-secret-key-here\"",
-    "postinstall": "npm rebuild sharp"
+    "sync-cars": "curl -X GET \"http://localhost:3000/api/sync-cars?key=your-sync-secret-key-here\""
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -25,7 +24,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.4",
     "xmldom": "^0.6.0",
     "yet-another-react-lightbox": "^3.25.0",
     "zod": "^4.1.9"
