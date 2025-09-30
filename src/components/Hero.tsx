@@ -23,20 +23,20 @@ export default function Hero() {
         <div ref={heroRef as React.RefObject<HTMLDivElement>} className={`max-w-3xl mx-auto text-center transition-all duration-1000 ${
           heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-dark-primary animate-fade-in-down">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-dark-primary">
             Car & Art
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-primary-300 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl md:text-2xl mb-8 text-primary-300">
             Váš exkluzívny predajca v Banskej Bystrici
           </p>
-          <p className="text-lg mb-8 text-dark-200 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <p className="text-lg mb-8 text-dark-200">
             Ponúkame kvalitné vozidlá za výhodné ceny. Financovanie, poistenie a poradenstvo.
           </p>
           
           {/* Divider */}
-          <div className="w-24 h-0.5 bg-primary-500 mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.5s' }}></div>
+          <div className="w-24 h-0.5 bg-primary-500 mx-auto mb-8"></div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/auta"
               className="inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25"
