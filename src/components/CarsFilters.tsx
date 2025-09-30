@@ -113,10 +113,12 @@ export default function CarsFilters() {
       </div>
 
       {/* Filters content */}
-      <div className={`px-6 pb-6 transition-all duration-300 ${
-        isCollapsed ? 'max-h-0 overflow-hidden md:max-h-none' : 'max-h-screen'
+      <div className={`transition-all duration-300 ${
+        isCollapsed ? 'max-h-0 overflow-hidden md:max-h-none md:overflow-visible' : 'max-h-screen'
       }`}>
-        <div className="space-y-6 pt-4">
+        <div className={`px-6 pb-6 space-y-6 pt-4 transition-all duration-300 ${
+          isCollapsed ? 'opacity-0 md:opacity-100' : 'opacity-100'
+        }`}>
         {/* Search */}
         <div>
           <label className="block text-sm font-medium text-dark-secondary mb-2">
