@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    container_name: carart-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=mysql://user:password@dbhost:3306/dbname
+    networks:
+      - web
+    volumes:
+      - /mnt/HC_Volume_103599864/projects/carart:/app/data
+    ports:
+      - "3000:3000"
+
+networks:
+  web:
+    external: true
