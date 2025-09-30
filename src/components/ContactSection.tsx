@@ -86,7 +86,7 @@ export default function ContactSection() {
               }`} style={{ animationDelay: '0.9s' }}>
                 <h4 className="text-lg font-semibold text-dark-primary mb-4 animate-fade-in-up">Poloha</h4>
                 <div 
-                  className="w-full h-64 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="w-full h-64 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
                   dangerouslySetInnerHTML={{ __html: settings.google_maps_embed }}
                 />
               </div>
