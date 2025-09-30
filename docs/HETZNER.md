@@ -21,6 +21,8 @@ Použitie:
 
 /mnt/HC_Volume_103599864/projects/carart → dáta projektu (uploady, logs…)
 
+/mnt/HC_Volume_103599864/projects/carart/uploads → obrázky áut (perzistentné)
+
 /mnt/HC_Volume_103599864/caddy → Caddy certifikáty a config
 
 3️⃣ Docker setup
@@ -39,6 +41,8 @@ b) docker-compose.yml
 App service: carart-app
 
 Mount volume /mnt/HC_Volume_103599864/projects/carart:/app/data
+
+Mount volume /mnt/HC_Volume_103599864/projects/carart/uploads:/app/data/uploads
 
 Env súbor .env (DB URL, secrets)
 

@@ -17,6 +17,9 @@
     # skopíruj vybuildovaný projekt
     COPY --from=builder /app ./
     
+    # vytvor uploads priečinok
+    RUN mkdir -p /app/data/uploads/cars
+    
     EXPOSE 3000
     CMD ["npm", "start"]
     

@@ -170,7 +170,7 @@ export async function downloadAndOptimizeImage(imageUrl: string, autobazarId: st
     }
 
     const imageBuffer = await response.arrayBuffer();
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads', 'cars', autobazarId);
+    const uploadDir = path.join('/app', 'data', 'uploads', 'cars', autobazarId);
     
     // Create directory if it doesn't exist
     if (!fs.existsSync(uploadDir)) {
@@ -186,7 +186,7 @@ export async function downloadAndOptimizeImage(imageUrl: string, autobazarId: st
       .webp({ quality: 80 })
       .toFile(filePath);
 
-    return `/uploads/cars/${autobazarId}/${filename}`;
+    return `/data/uploads/cars/${autobazarId}/${filename}`;
   } catch (error) {
     console.error(`Error downloading image ${imageUrl}:`, error);
     return null;
@@ -203,7 +203,7 @@ export function createCarImages(carId: number, imageUrls: string[]): Omit<CarIma
 }
 
 export async function checkAndDownloadMissingImages(autobazarId: string, photoUrls: string[]): Promise<string[]> {
-  const uploadDir = path.join(process.cwd(), 'public', 'uploads', 'cars', autobazarId);
+  const uploadDir = path.join('/app', 'data', 'uploads', 'cars', autobazarId);
   const downloadedImages: string[] = [];
   
   // Check if directory exists
@@ -224,7 +224,7 @@ export async function checkAndDownloadMissingImages(autobazarId: string, photoUr
     // Check if image already exists
     if (existingFiles.includes(expectedFilename) && fs.existsSync(filePath)) {
       // Image exists, add to result
-      downloadedImages.push(`/uploads/cars/${autobazarId}/${expectedFilename}`);
+      downloadedImages.push(`/data/uploads/cars/${autobazarId}/${expectedFilename}`);
       console.log(`✅ Image already exists: ${expectedFilename}`);
     } else {
       // Image doesn't exist, download it
