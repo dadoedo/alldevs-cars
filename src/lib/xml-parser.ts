@@ -186,7 +186,7 @@ export async function downloadAndOptimizeImage(imageUrl: string, autobazarId: st
       .webp({ quality: 80 })
       .toFile(filePath);
 
-    return `/data/uploads/cars/${autobazarId}/${filename}`;
+    return `/uploads/cars/${autobazarId}/${filename}`;
   } catch (error) {
     console.error(`Error downloading image ${imageUrl}:`, error);
     return null;
@@ -224,7 +224,7 @@ export async function checkAndDownloadMissingImages(autobazarId: string, photoUr
     // Check if image already exists
     if (existingFiles.includes(expectedFilename) && fs.existsSync(filePath)) {
       // Image exists, add to result
-      downloadedImages.push(`/data/uploads/cars/${autobazarId}/${expectedFilename}`);
+      downloadedImages.push(`/uploads/cars/${autobazarId}/${expectedFilename}`);
       console.log(`✅ Image already exists: ${expectedFilename}`);
     } else {
       // Image doesn't exist, download it
