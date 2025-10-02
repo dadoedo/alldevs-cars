@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
                 email: info@carart.sk, telefón: — týkajúce sa zhromažďovania, používania a zverejňovania 
                 vašich informácií, ktoré zbierame pri používaní našej webovej stránky (
                 <a href="https://carart.sk" className="text-blue-600 hover:text-blue-800">https://carart.sk</a>
-                ). (ďalej len „Služba"). Prístupom alebo používaním Služby súhlasíte so zhromažďovaním, 
+                ). (ďalej len &bdquo;Služba&ldquo;). Prístupom alebo používaním Služby súhlasíte so zhromažďovaním, 
                 používaním a zverejňovaním vašich informácií v súlade s týmito Zásadami ochrany osobných údajov. 
                 Ak s tým nesúhlasíte, prosím, nepoužívajte Službu.
               </p>

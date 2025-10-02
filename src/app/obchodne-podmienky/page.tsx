@@ -30,8 +30,8 @@ export default function TermsOfServicePage() {
                 Tieto obchodné podmienky upravujú vzájomné práva a povinnosti medzi spoločnosťou{' '}
                 <strong>Ascari Group s.r.o.</strong>, IČO: [IČO], so sídlom Kalinčiakova 1, 97405 Banská Bystrica, 
                 Slovensko, zapísanou v Obchodnom registri Okresného súdu Banská Bystrica, oddiel Sro, vložka č. [číslo] 
-                (ďalej len „Predávajúci") a fyzickou alebo právnickou osobou, ktorá nakupuje vozidlá alebo služby 
-                (ďalej len „Kupujúci").
+                (ďalej len &bdquo;Predávajúci&ldquo;) a fyzickou alebo právnickou osobou, ktorá nakupuje vozidlá alebo služby 
+                (ďalej len &bdquo;Kupujúci&ldquo;).
               </p>
 
               <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
