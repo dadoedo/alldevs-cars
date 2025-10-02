@@ -144,7 +144,6 @@ export default function Footer() {
             <div className="flex space-x-6 mt-4 md:mt-0">
               {[
                 { href: '/ochrana-udajov', text: 'Ochrana údajov' },
-                { href: '/obchodne-podmienky', text: 'Obchodné podmienky' },
                 { href: '/cookies', text: 'Cookies' }
               ].map((link, index) => (
                 <Link 
