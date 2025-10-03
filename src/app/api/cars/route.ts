@@ -111,12 +111,13 @@ export async function GET(request: NextRequest) {
           CONCAT(ci.id, ':', ci.image_url, ':', ci.is_primary, ':', ci.sort_order)
           ORDER BY ci.sort_order
           SEPARATOR '|'
-        ) as images
+        ) as images,
+        (SELECT COUNT(*) FROM car_images ci2 WHERE ci2.car_id = c.id) as image_count
       FROM cars c
       LEFT JOIN car_images ci ON c.id = ci.car_id
       ${whereClause}
       GROUP BY c.id
-      ORDER BY c.${sortField} ${sortDirection}
+      ORDER BY CASE WHEN image_count = 0 THEN 1 ELSE 0 END, c.${sortField} ${sortDirection}, image_count DESC
       LIMIT ? OFFSET ?
     `;
     
