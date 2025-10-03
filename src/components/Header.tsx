@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, Home, Car, Wrench, MessageCircle } from 'lucide-react';
 import { useSettings } from '@/lib/useSettings';
 
 export default function Header() {
@@ -21,10 +21,10 @@ export default function Header() {
   }, []);
 
   const navigation = [
-    { name: 'Domov', href: '/' },
-    { name: 'Ponuka áut', href: '/auta' },
-    { name: 'Služby', href: '/sluzby' },
-    { name: 'Kontakt', href: '/kontakt' },
+    { name: 'Domov', href: '/', icon: Home },
+    { name: 'Ponuka áut', href: '/auta', icon: Car },
+    { name: 'Služby', href: '/sluzby', icon: Wrench },
+    { name: 'Kontakt', href: '/kontakt', icon: MessageCircle },
   ];
 
   return (
@@ -48,17 +48,21 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-dark-secondary hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 relative group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+            {navigation.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-dark-secondary hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 relative group flex items-center space-x-2"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <IconComponent className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                  <span>{item.name}</span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Contact Info */}
@@ -91,17 +95,21 @@ export default function Header() {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-dark-800 border-t border-dark-700">
-            {navigation.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-dark-secondary hover:text-primary-500 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:translate-x-2 hover:bg-dark-700"
-                onClick={() => setIsMenuOpen(false)}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-dark-secondary hover:text-primary-500 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:translate-x-2 hover:bg-dark-700 flex items-center space-x-3"
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <IconComponent className="h-5 w-5 transition-transform duration-300 hover:scale-110" />
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
             <div className="pt-4 border-t border-dark-700">
               <div className="flex items-center space-x-2 text-sm text-dark-muted px-3 py-2 hover:text-primary-500 transition-colors duration-300">
                 <Phone className="h-4 w-4 transition-transform duration-300 hover:scale-110" />

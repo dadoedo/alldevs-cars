@@ -14,6 +14,7 @@ services:
     volumes:
       - /mnt/HC_Volume_103599864/projects/carart:/app/data
       - /mnt/HC_Volume_103599864/projects/carart/uploads:/app/data/uploads
+      - /mnt/HC_Volume_103599864/projects/carart/logs:/app/logs
     ports:
       - "3000:3000"
 
