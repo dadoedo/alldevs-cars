@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Inštalácia dependencií
+COPY package*.json ./
+RUN npm install
+
+# Vytvor uploads priečinok
+RUN mkdir -p /app/data/uploads/cars
+
+EXPOSE 3000
+
+# Spusti development server s hot reload
+CMD ["npm", "run", "dev"]
