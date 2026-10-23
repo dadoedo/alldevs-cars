@@ -38,7 +38,7 @@ Expose port 3000
 
 b) docker-compose.yml
 
-App service: `carart-app` (image `ghcr.io/dadoedo/alldevs-cars:${IMAGE_TAG:-latest}` — built in GitHub Actions, not on the server)
+Compose service: `app` (container `carart-app`; image `ghcr.io/dadoedo/alldevs-cars:${IMAGE_TAG:-latest}` — built in GitHub Actions, not on the server)
 
 Deploy directory on server: `/root/carart` (`scripts/deploy-prod.sh`, `docker-compose.yml`, `.env`)
 

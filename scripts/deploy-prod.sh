@@ -4,7 +4,7 @@ set -euo pipefail
 SHA="${1:?Usage: deploy-prod.sh <git-sha>}"
 COMPOSE_DIR="/root/carart"
 IMAGE="ghcr.io/dadoedo/alldevs-cars"
-SERVICE="carart-app"
+SERVICE="app"
 CONTAINER="carart-app"
 MAX_RETRIES="${HEALTH_RETRIES:-30}"
 RETRY_INTERVAL="${HEALTH_INTERVAL:-2}"
