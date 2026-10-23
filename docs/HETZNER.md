@@ -32,13 +32,17 @@ Multi-stage build:
 
 Stage 1: build Next.js (npm run build)
 
-Stage 2: runtime (Node 20-alpine)
+Stage 2: runtime (Node 22.23.4-alpine)
 
 Expose port 3000
 
 b) docker-compose.yml
 
-App service: carart-app
+Compose service: `app` (container `carart-app`; image `ghcr.io/dadoedo/alldevs-cars:${IMAGE_TAG:-latest}` — built in GitHub Actions, not on the server)
+
+Deploy directory on server: `/root/carart` (`scripts/deploy-prod.sh`, `docker-compose.yml`, `.env`)
+
+CI deploy: GitHub Actions SSHes to root with a dedicated key bound in authorized_keys to `command="/root/carart/scripts/deploy-prod.sh",restrict`; the script accepts only a 40-hex commit SHA or the exact `GHCR_USER=<name> /root/carart/scripts/deploy-prod.sh <sha>` the workflow sends (the GITHUB_TOKEN for the GHCR pull goes on stdin).
 
 Mount volume /mnt/HC_Volume_103599864/projects/carart:/app/data
 
@@ -46,7 +50,7 @@ Mount volume /mnt/HC_Volume_103599864/projects/carart/uploads:/app/data/uploads
 
 Env súbor .env (DB URL, secrets)
 
-Port mapping 3000:3000
+No public host port (Caddy reaches the app on Docker network `web`)
 
 Caddy service: caddy
 
