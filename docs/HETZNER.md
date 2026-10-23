@@ -42,6 +42,8 @@ Compose service: `app` (container `carart-app`; image `ghcr.io/dadoedo/alldevs-c
 
 Deploy directory on server: `/root/carart` (`scripts/deploy-prod.sh`, `docker-compose.yml`, `.env`)
 
+CI deploy: GitHub Actions SSHes to root with a dedicated key bound in authorized_keys to `command="/root/carart/scripts/deploy-prod.sh",restrict`; the script accepts only a 40-hex commit SHA or the exact `GHCR_USER=<name> /root/carart/scripts/deploy-prod.sh <sha>` the workflow sends (the GITHUB_TOKEN for the GHCR pull goes on stdin).
+
 Mount volume /mnt/HC_Volume_103599864/projects/carart:/app/data
 
 Mount volume /mnt/HC_Volume_103599864/projects/carart/uploads:/app/data/uploads
