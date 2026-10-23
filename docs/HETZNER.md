@@ -38,7 +38,9 @@ Expose port 3000
 
 b) docker-compose.yml
 
-App service: carart-app
+App service: `carart-app` (image `ghcr.io/dadoedo/alldevs-cars:${IMAGE_TAG:-latest}` — built in GitHub Actions, not on the server)
+
+Deploy directory on server: `/root/carart` (`scripts/deploy-prod.sh`, `docker-compose.yml`, `.env`)
 
 Mount volume /mnt/HC_Volume_103599864/projects/carart:/app/data
 
@@ -46,7 +48,7 @@ Mount volume /mnt/HC_Volume_103599864/projects/carart/uploads:/app/data/uploads
 
 Env súbor .env (DB URL, secrets)
 
-Port mapping 3000:3000
+No public host port (Caddy reaches the app on Docker network `web`)
 
 Caddy service: caddy
 
