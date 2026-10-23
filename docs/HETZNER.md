@@ -32,7 +32,7 @@ Multi-stage build:
 
 Stage 1: build Next.js (npm run build)
 
-Stage 2: runtime (Node 20-alpine)
+Stage 2: runtime (Node 22.23.4-alpine)
 
 Expose port 3000
 
